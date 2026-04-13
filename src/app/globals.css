@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Primary (Neutral / Black) */
+  --color-primary-100: #f5f5f5;
+  --color-primary-200: #e5e5e5;
+  --color-primary-300: #d4d4d4;
+  --color-primary-400: #a3a3a3;
+  --color-primary-500: #737373;
+  --color-primary-600: #525252;
+  --color-primary-700: #404040;
+  --color-primary-800: #262626;
+  --color-primary-900: #000000;
+
+  /* Base (Off-white) */
+  --color-base-100: #ffffff;
+  --color-base-200: #fafafa;
+  --color-base-300: #f4f7fa;
+  --color-base-400: #e8ecf1;
+  --color-base-500: #d5dbe4;
+  --color-base-600: #b4bcc9;
+  --color-base-700: #8c95a6;
+  --color-base-800: #5e6676;
+  --color-base-900: #2f3541;
+
+  /* Secondary 1 — Int Navy */
+  --color-secondary1-100: #e6eaf2;
+  --color-secondary1-200: #c2cbde;
+  --color-secondary1-300: #9eabc9;
+  --color-secondary1-400: #5a73a3;
+  --color-secondary1-500: #2f4b87;
+  --color-secondary1-600: #1a3676;
+  --color-secondary1-700: #112c6e;
+  --color-secondary1-800: #0a2465;
+  --color-secondary1-900: #051640;
+
+  /* Secondary 2 — Slate Blue */
+  --color-secondary2-100: #eef0f5;
+  --color-secondary2-200: #d4d9e5;
+  --color-secondary2-300: #b9c1d4;
+  --color-secondary2-400: #8a95b5;
+  --color-secondary2-500: #5b6b95;
+  --color-secondary2-600: #4a597f;
+  --color-secondary2-700: #3a4769;
+  --color-secondary2-800: #2b3552;
+  --color-secondary2-900: #1c243c;
+
+  /* Secondary 3 — Mint Blue */
+  --color-secondary3-100: #f1f3f8;
+  --color-secondary3-200: #dce1ec;
+  --color-secondary3-300: #b6c1d8;
+  --color-secondary3-400: #7b8db8;
+  --color-secondary3-500: #6478a8;
+  --color-secondary3-600: #536591;
+  --color-secondary3-700: #42527a;
+  --color-secondary3-800: #313e5e;
+  --color-secondary3-900: #202a42;
+
+  /* Accent — Turquoise */
+  --color-accent-100: #e8fbf9;
+  --color-accent-200: #bff3ed;
+  --color-accent-300: #80e9dd;
+  --color-accent-400: #40e0d0;
+  --color-accent-500: #2bc9ba;
+  --color-accent-600: #22a89c;
+  --color-accent-700: #1b867c;
+  --color-accent-800: #14645d;
+  --color-accent-900: #0d423e;
+
+  /* Status — Success (muted sage) */
+  --color-success-100: #def0e5;
+  --color-success-200: #bfe0cb;
+  --color-success-300: #9ed3b3;
+  --color-success-400: #74bf8e;
+  --color-success-500: #4ca97a;
+  --color-success-600: #3a8a63;
+  --color-success-700: #2f7a57;
+  --color-success-800: #235e42;
+  --color-success-900: #14402c;
+
+  /* Status — Warning (muted amber) */
+  --color-warning-100: #faf0da;
+  --color-warning-200: #f1dfaf;
+  --color-warning-300: #e7c582;
+  --color-warning-400: #dbae59;
+  --color-warning-500: #c79432;
+  --color-warning-600: #a87a22;
+  --color-warning-700: #85621d;
+  --color-warning-800: #5e4614;
+  --color-warning-900: #3b2c0a;
+
+  /* Status — Critical (muted brick) */
+  --color-critical-100: #f6dfde;
+  --color-critical-200: #ecb9b6;
+  --color-critical-300: #e0938e;
+  --color-critical-400: #cf6d67;
+  --color-critical-500: #b94d47;
+  --color-critical-600: #9a3e3a;
+  --color-critical-700: #7d322f;
+  --color-critical-800: #5b2421;
+  --color-critical-900: #3a1614;
+
+  /* Semantic tokens — light theme */
+  --color-bg: var(--color-base-300);
+  --color-surface: var(--color-base-100);
+  --color-surface-2: var(--color-base-200);
+  --color-surface-muted: var(--color-base-300);
+  --color-border: var(--color-base-400);
+  --color-border-strong: var(--color-base-500);
+  --color-fg: var(--color-primary-900);
+  --color-fg-muted: var(--color-base-800);
+  --color-fg-subtle: var(--color-base-700);
+
+  --font-sans:
+    "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont,
+    system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono:
+    "Pretendard Variable", "Pretendard", ui-monospace, SFMono-Regular,
+    "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* Dark theme — Grafana-like near-black with blue-tinted surfaces */
+.dark {
+  --color-bg: #0b0d12;
+  --color-surface: #12151c;
+  --color-surface-2: #181c25;
+  --color-surface-muted: #1f242f;
+  --color-border: #242a36;
+  --color-border-strong: #2f3644;
+  --color-fg: #e6e9ef;
+  --color-fg-muted: #a6adbb;
+  --color-fg-subtle: #6b7280;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+  font-feature-settings: "ss03", "ss04", "cv01", "tnum";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Grafana-like subtle grid background */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--color-fg) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-fg) 4%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-dots {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--color-fg) 12%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+/* Scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border-strong) transparent;
+}
