@@ -23,6 +23,7 @@
 - `ss03`, `ss04`, `cv01` — Pretendard 스타일리스틱 세트 (한글 가독성 향상)
 - `tnum` — tabular numbers (지표/테이블 숫자 정렬)
 
+
 ## 금지 사항
 
 - Google Fonts, Geist, Inter, Pretendard 이외의 어떤 웹폰트도 로드 금지
